@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visoin engineering and services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">Visoin Engineering<span> and Services</span></div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#accueil" onclick="closeMenu()">Accueil</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#projets" onclick="closeMenu()">Projets</a></li>
+                <li><a href="#apropos" onclick="closeMenu()">À Propos</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- ACCUEIL -->
+    <section id="accueil">
+        <div class="hero-content">
+            <h1>Votre Masion Votre Bohneur</h1>
+            <p>Expertise en construction, rénovation et génie civil. Nous transformons vos visions en réalité durable.</p>
+            <a href="#contact" class="btn">Demander un Devis</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-title reveal">
+            <h2>Nos Services</h2>
+            <p>Des solutions complètes pour tous vos besoins en BTP</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="icon-box"><i class="fas fa-hard-hat"></i></div>
+                <h3>Construction Neuve</h3>
+                <p>Réalisation de bâtiments résidentiels et commerciaux, du gros œuvre aux finitions.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon-box"><i class="fas fa-tools"></i></div>
+                <h3>Rénovation</h3>
+                <p>Modernisation d'espaces existants, réhabilitation énergétique et extension.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon-box"><i class="fas fa-drafting-compass"></i></div>
+                <h3>Architecture & Plans</h3>
+                <p>Conception de plans 2D/3D et accompagnement dans les démarches administratives.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="icon-box"><i class="fas fa-road"></i></div>
+                <h3>Génie Civil</h3>
+                <p>Travaux de voirie, terrassement et infrastructures publiques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets">
+        <div class="section-title reveal">
+            <h2>Nos Réalisations</h2>
+            <p>Découvrez notre savoir-faire à travers nos derniers chantiers</p>
+        </div>
+
+        <div class="filter-buttons reveal">
+            <button class="filter-btn active" onclick="filterProjects('all')">Tous</button>
+            <button class="filter-btn" onclick="filterProjects('construction')">Construction</button>
+            <button class="filter-btn" onclick="filterProjects('renovation')">Rénovation</button>
+            <button class="filter-btn" onclick="filterProjects('public')">Public</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+    
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <button id="load-more" class="btn" style="background: var(--secondary-color);">Voir plus de projets</button>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos">
+        <div class="about-img reveal">
+            <img src="logosite.jpeg" alt="Équipe BTP">
+        </div>
+        <div class="about-text reveal">
+            <h2>Qui Sommes-Nous ?</h2>
+            <p>Fondée en XXXX, Visoin Engineering And Services est une entreprise leader dans le secteur du BTP. Notre mission est de fournir des infrastructures de qualité supérieure en respectant les délais et les budgets.</p>
+            <p>Notre équipe est composée d'ingénieurs, d'architectes et d'ouvriers qualifiés passionnés par l'innovation et la sécurité.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <h3 data-target="70">0</h3>
+                    <p>Projets Réalisés</p>
+                </div>
+                <div class="stat-item">
+                    <h3 data-target="18">0</h3>
+                    <p>Années d'Expérience</p>
+                </div>
+                <div class="stat-item">
+                    <h3 data-target="45">0</h3>
+                    <p>Experts Qualifiés</p>
+                </div>
+            </div>
+        </div>
+        </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-title reveal">
+            <h2>Contactez-Nous</h2>
+            <p>Prêt à démarrer votre projet ? Discutons-en.</p>
+        </div>
+        <div class="contact-container reveal">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4>Adresse</h4>
+                        <p>Mballa II Entrée Jamot</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p>+237 694 11 07 87</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>visionengineering@gamil.com</p>
+                    </div>
+                </div>
+              
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.1463176645655!2d11.523140369604953!3d3.898678687756173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf723797517d%3A0x7d4e052a98ca2970!2sCarrefour%20Jamot!5e0!3m2!1sfr!2sus!4v1765212273162!5m2!1sfr!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" name="nom" id="nom" placeholder="Votre Nom" required>
+                    <input type="email" name="email" id="email" placeholder="Votre Email" required>
+                    <input type="text"  name="sujet" id="sujet" placeholder="Sujet" required>
+                    <textarea name="message" id="message" rows="7" placeholder="Message" required></textarea>
+                    <button type="submit" id="btn-submit">Envoyer le message</button>
+                </form>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+    // --- 1. CONFIGURATION ---
+    
+    // Vos clés (Celles-ci sont correctes d'après vos messages précédents)
+    const supabaseUrl = 'https://kuhpnewdikmbztmpddbr.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1aHBuZXdkaWttYnp0bXBkZGJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyMDk0ODUsImV4cCI6MjA4MDc4NTQ4NX0.NieLzgaETMjU_xrD32sP7fqWXXKD6U6F2v9ZZ4zCl-g';
+
+    // CORRECTION ICI : On change le nom de la variable pour éviter l'erreur "Initialization"
+    // 'supabase' (l'outil global) crée 'clientSupabase' (votre connexion)
+    const clientSupabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Initialisation EmailJS
+    emailjs.init("l2o1aPLHxsWxRzR-i");
+
+    // --- 2. LOGIQUE ---
+
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('btn-submit');
+
+    // Vérification de sécurité dans la console
+    if (!form) console.error("ERREUR: Formulaire introuvable ! Vérifiez l'ID 'contactForm' dans le HTML");
+    if (!clientSupabase) console.error("ERREUR: Supabase n'est pas connecté");
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Empêche le rechargement de la page (les paramètres ?nom=... dans l'URL)
+        console.log("Bouton cliqué, début du traitement...");
+        
+        const originalBtnText = btn.innerText;
+        btn.innerText = 'Envoi en cours...';
+        btn.disabled = true;
+
+        const formData = {
+            nom: document.getElementById('nom').value,
+            email: document.getElementById('email').value,
+            sujet: document.getElementById('sujet').value,
+            message: document.getElementById('message').value
+        };
+
+        try {
+            // ÉTAPE A : Sauvegarde dans Supabase
+            // Notez qu'on utilise 'clientSupabase' maintenant
+            const { error: dbError } = await clientSupabase
+                .from('contacts')
+                .insert([formData]);
+
+            if (dbError) {
+                console.error("Erreur Supabase détaillée:", dbError);
+                throw new Error("Erreur base de données: " + dbError.message);
+            }
+            console.log("Sauvegarde Supabase réussie !");
+
+            // ÉTAPE B : Envoi EmailJS
+            await emailjs.send('service_0mg1yy1', 'template_l3hf6ix', {
+                nom: formData.nom,
+                email: formData.email,
+                sujet: formData.sujet,
+                message: formData.message,
+                my_email: 'jorelowona413@gmail.com'
+            });
+            console.log("Envoi EmailJS réussi !");
+
+            // SUCCÈS TOTAL
+            alert("Message enregistré et email envoyé avec succès !");
+            form.reset();
+
+        } catch (error) {
+            console.error('Erreur capturée:', error);
+            alert("Une erreur est survenue : " + (error.message || "Erreur inconnue"));
+        } finally {
+            btn.innerText = originalBtnText;
+            btn.disabled = false;
+        }
+    });
+</script>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; visoin engineering and services.... Votre Maison Notre Bohneur.</p>
+    </footer>
+
+    <script>
+        // --- 1. MENU RESPONSIVE ---
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('show');
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.remove('show');
+        }
+
+        // --- 2. GÉNÉRATION DYNAMIQUE DES PROJETS (utilise images locales dans `images/`) ---
+        const projectsData = [];
+        const categories = ['construction', 'renovation', 'public'];
+
+        const rawImageFiles = [
+            'IMG 17.jpeg',
+            'IMG 18.jpeg',
+            'IMG 19.jpeg',
+            'IMG 20.jpeg',
+            'IMG 21.jpeg',
+            'IMG 22.jpeg',
+            'IMG 24.jpeg',
+            'IMG après.jpeg',
+            'IMG avant.jpeg',
+            'IMG.jpeg',
+            'IMG1.jpeg',
+            'IMG10.jpeg',
+            'IMG11.jpeg',
+            'IMG12.jpeg',
+            'IMG13.jpeg',
+            'IMG14.jpeg',
+            'IMG15.jpeg',
+            'IMG16.jpeg',
+            'IMG2.jpeg',
+            'IMG22.jpeg',
+            'IMG23.jpeg',
+            'IMG25.jpeg',
+            'IMG26.jpeg',
+            'IMG27.jpeg',
+            'IMG28.jpeg',
+            'IMG29.jpeg',
+            'IMG3.jpeg',
+            'IMG30.jpeg',
+            'IMG31.jpeg',
+            'IMG32.jpeg',
+            'IMG33.jpeg',
+            'IMG34.jpeg',
+            'IMG35.jpeg',
+            'IMG36.jpeg',
+            'IMG37.jpeg',
+            'IMG38.jpeg',
+            'IMG39.jpeg',
+            'IMG4.jpeg',
+            'IMG40.jpeg',
+            'IMG41.jpeg',
+            'IMG42.jpeg',
+            'IMG43.jpeg',
+            'IMG44.jpeg',
+            'IMG45.jpeg',
+            'IMG46.jpeg',
+            'IMG47.jpeg',
+            'IMG48.jpeg',
+            'IMG5.jpeg',
+            'IMG6.jpeg',
+            'IMG7.jpeg',
+            'IMG8.jpeg',
+            'IMG9.jpeg',
+            'MAISON1.jpeg',
+            'MAISON2.jpeg',
+            'MAISON3.jpeg',
+            'PISCINE1.jpeg'
+        ];
+
+        // Dédupliquer et trier (optionnel) pour éviter doublons éventuels
+        const imageFiles = Array.from(new Set(rawImageFiles)).sort();
+
+        // Construire projectsData à partir des fichiers locaux
+        for (let i = 0; i < imageFiles.length; i++) {
+            const file = imageFiles[i];
+            const cat = categories[Math.floor(Math.random() * categories.length)];
+            projectsData.push({
+                id: i + 1,
+                category: cat,
+                image: `images/${file}`,
+                title: `Projet ${cat.charAt(0).toUpperCase() + cat.slice(1)} #${i + 1}`,
+                desc: "Description courte du projet..."
+            });
+        }
+
+        const itemsPerPage = 8; // Nombre initial de projets affichés
+        let currentPage = 1;
+        let currentFilter = 'all';
+
+        function renderProjects(filter, page) {
+            const grid = document.getElementById('portfolio-grid');
+            const loadMoreBtn = document.getElementById('load-more');
+            
+            // Si c'est la page 1, on vide la grille, sinon on ajoute
+            if(page === 1) grid.innerHTML = '';
+
+            const filteredData = filter === 'all' 
+                ? projectsData 
+                : projectsData.filter(p => p.category === filter);
+
+            const start = (page - 1) * itemsPerPage;
+            const end = page * itemsPerPage;
+            const itemsToShow = filteredData.slice(start, end);
+
+            itemsToShow.forEach(project => {
+                const div = document.createElement('div');
+                div.className = 'project-item reveal'; // Ajout de la classe reveal pour l'anim
+                div.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="project-overlay">
+                        <h4>${project.title}</h4>
+                        <p>${project.desc}</p>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+
+            // Gestion du bouton "Voir plus"
+            if (end >= filteredData.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-block';
+            }
+            
+            // Réappliquer l'observateur d'animation sur les nouveaux éléments
+            observeElements();
+        }
+
+        function filterProjects(category) {
+            currentFilter = category;
+            currentPage = 1;
+            
+            // Mise à jour des boutons actifs
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            renderProjects(currentFilter, currentPage);
+        }
+
+        document.getElementById('load-more').addEventListener('click', () => {
+            currentPage++;
+            renderProjects(currentFilter, currentPage);
+        });
+
+        // Initialisation
+        renderProjects('all', 1);
+
+        // --- 3. ANIMATION AU SCROLL (Intersection Observer) ---
+        function observeElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+        
+        observeElements(); // Lancer l'observation initiale
+
+        // --- 4. ANIMATION DES CHIFFRES (Compteur) ---
+        const statsSection = document.querySelector('.stats');
+        let statsAnimated = false;
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !statsAnimated) {
+                const counters = document.querySelectorAll('.stat-item h3');
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const speed = 200; // Plus c'est haut, plus c'est lent
+                    
+                    const updateCount = () => {
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if(count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+                statsAnimated = true;
+            }
+        });
+
+        if(statsSection) statsObserver.observe(statsSection);
+
+    </script>
+        <script src="script.js"></script>
+</body>
+</html>
