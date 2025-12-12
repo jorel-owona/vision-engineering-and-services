@@ -351,6 +351,36 @@
 
         form button:hover { background: #d35400; }
 
+     /* Style du conteneur des icônes */
+.social-container {
+    width: 100%;             /* Prend toute la largeur */
+    text-align: center;      /* Centre les icônes */
+    margin-top: 30px;        /* Ajoute de l'espace au-dessus (entre le bouton et les icônes) */
+    border-top: 1px solid #eee; /* Optionnel : une petite ligne de séparation fine */
+    padding-top: 20px;
+}
+
+/* Le reste du style des boutons (comme avant) */
+.social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: transform 0.3s;
+}
+
+.social-btn.facebook { background-color: #3b5998; }
+.social-btn.whatsapp { background-color: #25D366; }
+
+.social-btn:hover { transform: scale(1.1); }
+
         footer {
             background: #1a252f;
             color: #7f8c8d;

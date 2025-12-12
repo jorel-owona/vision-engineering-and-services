@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>visoin engineering and services</title>
+    <link rel="icon" href="logosite.jpeg" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -149,7 +150,7 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form id="contactForm">
+                <form>
                     <input type="text" name="nom" id="nom" placeholder="Votre Nom" required>
                     <input type="email" name="email" id="email" placeholder="Votre Email" required>
                     <input type="text"  name="sujet" id="sujet" placeholder="Sujet" required>
@@ -160,39 +161,27 @@
             <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-    // --- 1. CONFIGURATION ---
+            <script>
+    // --- CONFIGURATION ---
     
-    // Vos clés (Celles-ci sont correctes d'après vos messages précédents)
-    const supabaseUrl = 'https://kuhpnewdikmbztmpddbr.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1aHBuZXdkaWttYnp0bXBkZGJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUyMDk0ODUsImV4cCI6MjA4MDc4NTQ4NX0.NieLzgaETMjU_xrD32sP7fqWXXKD6U6F2v9ZZ4zCl-g';
+    // Config Supabase
+    const supabaseUrl = 'VOTRE_URL_SUPABASE';
+    const supabaseKey = 'VOTRE_CLE_ANON_SUPABASE';
+    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    // CORRECTION ICI : On change le nom de la variable pour éviter l'erreur "Initialization"
-    // 'supabase' (l'outil global) crée 'clientSupabase' (votre connexion)
-    const clientSupabase = supabase.createClient(supabaseUrl, supabaseKey);
+    // Config EmailJS
+    emailjs.init("VOTRE_PUBLIC_KEY_EMAILJS"); // Remplacez par votre clé publique
 
-    // Initialisation EmailJS
-    emailjs.init("l2o1aPLHxsWxRzR-i");
-
-    // --- 2. LOGIQUE ---
+    // --- LOGIQUE ---
 
     const form = document.getElementById('contactForm');
     const btn = document.getElementById('btn-submit');
 
-    // Vérification de sécurité dans la console
-    if (!form) console.error("ERREUR: Formulaire introuvable ! Vérifiez l'ID 'contactForm' dans le HTML");
-    if (!clientSupabase) console.error("ERREUR: Supabase n'est pas connecté");
-
     form.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Empêche le rechargement de la page (les paramètres ?nom=... dans l'URL)
-        console.log("Bouton cliqué, début du traitement...");
+        e.preventDefault();
         
-        const originalBtnText = btn.innerText;
         btn.innerText = 'Envoi en cours...';
-        btn.disabled = true;
+
 
         const formData = {
             nom: document.getElementById('nom').value,
@@ -202,41 +191,46 @@
         };
 
         try {
-            // ÉTAPE A : Sauvegarde dans Supabase
-            // Notez qu'on utilise 'clientSupabase' maintenant
-            const { error: dbError } = await clientSupabase
+            // 1. Sauvegarde dans Supabase
+            const { error: dbError } = await supabase
                 .from('contacts')
                 .insert([formData]);
 
-            if (dbError) {
-                console.error("Erreur Supabase détaillée:", dbError);
-                throw new Error("Erreur base de données: " + dbError.message);
-            }
-            console.log("Sauvegarde Supabase réussie !");
+            if (dbError) throw dbError; // Si erreur BDD, on arrête tout
 
-            // ÉTAPE B : Envoi EmailJS
+            // 2. Envoi de l'email via EmailJS
+            // Remplacez 'service_xxx' et 'template_xxx' par vos IDs EmailJS
             await emailjs.send('service_0mg1yy1', 'template_l3hf6ix', {
                 nom: formData.nom,
-                email: formData.email,
+                email: formData.email, // L'email de la personne qui contacte
                 sujet: formData.sujet,
                 message: formData.message,
-                my_email: 'jorelowona413@gmail.com'
+                my_email: 'jorelowona413@gmail.com' // Optionnel si codé en dur dans le template
             });
-            console.log("Envoi EmailJS réussi !");
 
-            // SUCCÈS TOTAL
             alert("Message enregistré et email envoyé avec succès !");
             form.reset();
 
         } catch (error) {
-            console.error('Erreur capturée:', error);
-            alert("Une erreur est survenue : " + (error.message || "Erreur inconnue"));
+            console.error('Erreur:', error);
+            alert("Une erreur est survenue. Vérifiez la console.");
         } finally {
-            btn.innerText = originalBtnText;
-            btn.disabled = false;
+            btn.innerText = 'Envoyer le message';
         }
     });
 </script>
+
+<div class="social-container">
+    <p>Suivez-nous ou contactez-nous :</p>
+    
+    <a href="https://www.facebook.com/VOTRE_PAGE" target="_blank" class="social-btn facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://wa.me/237000000000" target="_blank" class="social-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
 
         </div>
     </section>
@@ -261,6 +255,7 @@
         const projectsData = [];
         const categories = ['construction', 'renovation', 'public'];
 
+        // Liste des fichiers trouvés dans `images/` (insérée automatiquement depuis le workspace)
         const rawImageFiles = [
             'IMG 17.jpeg',
             'IMG 18.jpeg',
