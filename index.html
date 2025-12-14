@@ -42,27 +42,38 @@
             <p>Des solutions complètes pour tous vos besoins en BTP</p>
         </div>
         <div class="services-grid">
-            <div class="service-card reveal">
-                <div class="icon-box"><i class="fas fa-hard-hat"></i></div>
-                <h3>Construction Neuve</h3>
-                <p>Réalisation de bâtiments résidentiels et commerciaux, du gros œuvre aux finitions.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="icon-box"><i class="fas fa-tools"></i></div>
-                <h3>Rénovation</h3>
-                <p>Modernisation d'espaces existants, réhabilitation énergétique et extension.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="icon-box"><i class="fas fa-drafting-compass"></i></div>
-                <h3>Architecture & Plans</h3>
-                <p>Conception de plans 2D/3D et accompagnement dans les démarches administratives.</p>
-            </div>
-            <div class="service-card reveal">
-                <div class="icon-box"><i class="fas fa-road"></i></div>
-                <h3>Génie Civil</h3>
-                <p>Travaux de voirie, terrassement et infrastructures publiques.</p>
-            </div>
+    <a href="services.html#construction" class="service-link">
+        <div class="service-card reveal">
+            <div class="icon-box"><i class="fas fa-hard-hat"></i></div>
+            <h3>Construction Neuve</h3>
+            <p>Réalisation de bâtiments résidentiels et commerciaux.</p>
         </div>
+    </a>
+
+    <a href="services.html#renovation" class="service-link">
+        <div class="service-card reveal">
+            <div class="icon-box"><i class="fas fa-tools"></i></div>
+            <h3>Rénovation</h3>
+            <p>Modernisation d'espaces et réhabilitation.</p>
+        </div>
+    </a>
+
+    <a href="services.html#architecture" class="service-link">
+        <div class="service-card reveal">
+            <div class="icon-box"><i class="fas fa-drafting-compass"></i></div>
+            <h3>Architecture & Plans</h3>
+            <p>Conception de plans 2D/3D et design.</p>
+        </div>
+    </a>
+
+    <a href="services.html#geniecivil" class="service-link">
+        <div class="service-card reveal">
+            <div class="icon-box"><i class="fas fa-road"></i></div>
+            <h3>Génie Civil</h3>
+            <p>Travaux de voirie et infrastructures.</p>
+        </div>
+    </a>
+</div>
     </section>
 
     <!-- PROJETS -->
@@ -150,25 +161,58 @@
                 </div>
             </div>
             <div class="contact-form">
-    <form id="contactForm">
-        <input type="text" name="nom" id="nom" placeholder="Votre Nom" required>
-        <input type="email" name="email" id="email" placeholder="Votre Email" required>
-        <input type="text" name="sujet" id="sujet" placeholder="Sujet" required>
-        <textarea name="message" id="message" rows="7" placeholder="Message" required></textarea>
-        <button type="submit" id="btn-submit">Envoyer le message</button>
-    </form>
+   <form id="contactForm">
+    
+    <div style="margin-bottom: 10px;">
+        <label for="nom" style="display:block; margin-bottom:5px; font-weight:bold;">
+            Votre Nom <span style="color:red">*</span>
+        </label>
+        <input type="text" name="nom" id="nom" required>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        <label for="email" style="display:block; margin-bottom:5px; font-weight:bold;">
+            Votre Email <span style="color:red">*</span>
+        </label>
+        <input type="email" name="email" id="email" required>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        <label for="sujet" style="display:block; margin-bottom:5px; font-weight:bold;">
+            Sujet <span style="color:red">*</span>
+        </label>
+        <input type="text" name="sujet" id="sujet" required>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+        <label for="message" style="display:block; margin-bottom:5px; font-weight:bold;">
+            Message <span style="color:red">*</span>
+        </label>
+        <textarea name="message" id="message" rows="7" required></textarea>
+    </div>
+
+    <button type="submit" id="btn-submit">Envoyer le message</button>
+</form>
 
     <div class="social-container">
-        <p>Suivez-nous ou contactez-nous :</p>
-        
-        <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank" class="social-btn facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
+    <p>Suivez-nous ou contactez-nous :</p>
+    
+    <a href="https://www.fb.com/l/6lp1kJRRR" target="_blank" class="social-btn facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
 
-        <a href="https://wa.me/237694110787" target="_blank" class="social-btn whatsapp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    <a href="https://wa.me/237694110787" target="_blank" class="social-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#" target="_blank" class="social-btn linkedin">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="#" target="_blank" class="social-btn youtube">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>

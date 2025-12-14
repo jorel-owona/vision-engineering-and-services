@@ -353,14 +353,14 @@
 
      /* Style du conteneur des icônes */
 .social-container {
-    width: 100%;             /* Prend toute la largeur */
-    text-align: center;      /* Centre les icônes */
-    margin-top: 30px;        /* Ajoute de l'espace au-dessus (entre le bouton et les icônes) */
-    border-top: 1px solid #eee; /* Optionnel : une petite ligne de séparation fine */
+    width: 100%;           
+    text-align: center;    
+    margin-top: 30px;       
+    border-top: 1px solid #eee; 
     padding-top: 20px;
 }
 
-/* Le reste du style des boutons (comme avant) */
+
 .social-btn {
     display: inline-flex;
     justify-content: center;
@@ -374,6 +374,14 @@
     margin: 0 10px;
     font-size: 24px;
     transition: transform 0.3s;
+}
+
+.social-btn.linkedin {
+    background-color: #0077b5;
+}
+
+.social-btn.youtube {
+    background-color: #ff0000;
 }
 
 .social-btn.facebook { background-color: #3b5998; }
@@ -391,11 +399,10 @@
         /* --- CARTE (Google Maps) --- */
         .map-container {
             width: 100%;
-            max-width: 800px; /* limite la largeur sur grand écran */
+            max-width: 800px; 
             margin-top: 20px;
             border-radius: 8px;
             overflow: hidden;
-            /* technique ratio 16:9 */
             position: relative;
             height: 0;
             padding-bottom: 56.25%;
